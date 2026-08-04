@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Blog de Animes</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #0f0f13;
+      color: #e8e8e8;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #1a1a24, #12121a);
+      padding: 25px 20px;
+      text-align: center;
+      border-bottom: 3px solid #ff6b35;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #ff6b35;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      color: #aaa;
+      font-size: 0.95rem;
+      margin-top: 4px;
+    }
+
+    /* Nav */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.25s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #ff6b35;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+      margin-bottom: 40px;
+      background: linear-gradient(145deg, #1c1c28, #15151f);
+      border-radius: 16px;
+      border: 1px solid #2a2a3a;
+    }
+
+    .hero h2 {
+      font-size: 1.8rem;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #bbb;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* Filtros */
+    .filtros {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 35px;
+      flex-wrap: wrap;
+    }
+
+    .filtro-btn {
+      background: #1e1e2a;
+      border: 1px solid #333;
+      color: #ccc;
+      padding: 8px 18px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.25s;
+    }
+
+    .filtro-btn:hover,
+    .filtro-btn.ativo {
+      background: #ff6b35;
+      color: #fff;
+      border-color: #ff6b35;
+    }
+
+    /* Posts */
+    .posts {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .post {
+      background: #16161f;
+      border-radius: 14px;
+      padding: 28px;
+      border-left: 5px solid #ff6b35;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .post:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    .post.naruto { border-left-color: #ff6b35; }
+    .post.blackclover { border-left-color: #4caf50; }
+    .post.alya { border-left-color: #64b5f6; }
+
+    .post .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 3px 10px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .post.naruto .tag { background: rgba(255,107,53,0.2); color: #ff6b35; }
+    .post.blackclover .tag { background: rgba(76,175,80,0.2); color: #4caf50; }
+    .post.alya .tag { background: rgba(100,181,246,0.2); color: #64b5f6; }
+
+    .post h3 {
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .post .meta {
+      font-size: 0.85rem;
+      color: #888;
+      margin-bottom: 14px;
+    }
+
+    .post p {
+      color: #ccc;
+      margin-bottom: 12px;
+    }
+
+    .post .acoes {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .like-btn {
+      background: transparent;
+      border: 1px solid #444;
+      color: #aaa;
+      padding: 6px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .like-btn:hover,
+    .like-btn.curtido {
+      background: #ff6b35;
+      border-color: #ff6b35;
+      color: #fff;
+    }
+
+    /* História especial */
+    .historia {
+      background: linear-gradient(145deg, #1a1a28, #12121c);
+      border-radius: 14px;
+      padding: 32px;
+      margin: 50px 0;
+      border: 1px solid #2a2a3a;
+    }
+
+    .historia h2 {
+      color: #ff6b35;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .historia p {
+      color: #ccc;
+      margin-bottom: 12px;
+    }
+
+    /* Sobre */
+    .sobre {
+      text-align: center;
+      padding: 40px 20px;
+      color: #aaa;
+    }
+
+    .sobre h2 {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #0a0a0e;
+      color: #666;
+      font-size: 0.9rem;
+      border-top: 1px solid #222;
+    }
+
+    /* Responsivo */
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.6rem; }
+      .hero h2 { font-size: 1.4rem; }
+      .post { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🔥 Meu Blog de Animes</h1>
+    <p>Naruto • Black Clover • Alya (Tokidoki Bosotto)</p>
+    <nav>
+      <a href="#inicio" class="active">Início</a>
+      <a href="#posts">Posts</a>
+      <a href="#historia">História</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+      <h2>Bem-vindo ao meu cantinho de animes</h2>
+      <p>Aqui eu falo com paixão sobre as franquias que mais me marcaram. Sem enrolação, só amor por essas histórias.</p>
+    </section>
+
+    <!-- Filtros -->
+    <div class="filtros">
+      <button class="filtro-btn ativo" data-filtro="todos">Todos</button>
+      <button class="filtro-btn" data-filtro="naruto">Naruto</button>
+      <button class="filtro-btn" data-filtro="blackclover">Black Clover</button>
+      <button class="filtro-btn" data-filtro="alya">Alya</button>
+    </div>
+
+    <!-- Posts -->
+    <section class="posts" id="posts">
+
+      <!-- Naruto -->
+      <article class="post naruto" data-anime="naruto">
+        <span class="tag">Naruto</span>
+        <h3>A Franquia Completa de Naruto</h3>
+        <div class="meta">Publicado em 04/08/2026</div>
+        <p>
+          Naruto não é só um anime. É uma jornada inteira: o menino rejeitado, o ninja que nunca desistiu, o Hokage, Boruto... 
+          Toda a franquia (clássico, Shippuden, filmes e Boruto) tem um lugar especial no coração. 
+          A mensagem de nunca desistir e superar o ódio continua forte até hoje.
+        </p>
+        <p>
+          Meu momento favorito? A luta final do Naruto e Sasuke no Vale do Fim. Goosebumps toda vez.
+        </p>
+        <div class="acoes">
+          <button class="like-btn">❤️ Curtir</button>
+        </div>
+      </article>
+
+      <!-- Black Clover -->
+      <article class="post blackclover" data-anime="blackclover">
+        <span class="tag">Black Clover</span>
+        <h3>Black Clover – O Rei dos Underdogs</h3>
+        <div class="meta">Publicado em 03/08/2026</div>
+        <p>
+          Asta não tem magia. Zero. E mesmo assim decide virar o Rei Mago. 
+          Black Clover é sobre esforço puro, amizade e nunca baixar a cabeça. 
+          A animação melhorou demais com o tempo e o mangá é ainda melhor.
+        </p>
+        <p>
+          Se você gosta de personagens que gritam “eu vou superar!” do começo ao fim, esse é o seu anime.
+        </p>
+        <div class="acoes">
+          <button class="like-btn">❤️ Curtir</button>
+        </div>
+      </article>
+
+      <!-- Alya -->
+      <article class="post alya" data-anime="alya">
+        <span class="tag">Tokidoki Bosotto</span>
+        <h3>Alya Sometimes Hides Her Feelings in Russian</h3>
+        <div class="meta">Publicado em 02/08/2026</div>
+        <p>
+          Alya é a garota perfeita da escola… só que ela fica murmurando em russo coisas fofas sem saber que o cara do lado entende tudo. 
+          É romance escolar leve, engraçado e com uma química deliciosa entre Alya e Masachika.
+        </p>
+        <p>
+          A dublagem da Alya falando russo é um charme à parte. Recomendo demais pra quem curte slice of life romântico.
+        </p>
+        <div class="acoes">
+          <button class="like-btn">❤️ Curtir</button>
+        </div>
+      </article>
+
+      <!-- Extra Naruto -->
+      <article class="post naruto" data-anime="naruto">
+        <span class="tag">Naruto</span>
+        <h3>Por que Naruto Shippuden ainda é imbatível</h3>
+        <div class="meta">Publicado em 01/08/2026</div>
+        <p>
+          A segunda parte da história eleva tudo: as mortes, as revelações, o Pain, a Guerra Ninja... 
+          É emocionalmente pesado e visualmente épico. Mesmo com fillers, o arco principal é obra-prima.
+        </p>
+        <div class="acoes">
+          <button class="like-btn">❤️ Curtir</button>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- História especial -->
+    <section class="historia" id="historia">
+      <h2>📖 História Especial: O dia em que eu descobri esses animes</h2>
+      <p>
+        Tudo começou com Naruto. Eu tinha uns 12 anos e vi o menino de macacão laranja falando de sonhos. 
+        Naquela época eu não entendia quase nada de ninja, mas senti que aquele anime falava direto comigo.
+      </p>
+      <p>
+        Anos depois veio Black Clover. Eu estava meio desanimado com a vida e Asta gritando “eu vou me tornar o Rei Mago!” 
+        me deu um soco de motivação. Foi tipo um reset mental.
+      </p>
+      <p>
+        E recentemente chegou a Alya. Eu só queria um romance leve… e acabei rindo sozinho várias vezes com as falas em russo. 
+        É engraçado como três animes tão diferentes conseguiram marcar fases diferentes da minha vida.
+      </p>
+      <p>
+        Por isso esse blog existe: pra eu poder falar desses personagens como se fossem amigos de verdade.
+      </p>
+    </section>
+
+    <!-- Sobre -->
+    <section class="sobre" id="sobre">
+      <h2>Sobre o Blog</h2>
+      <p>
+        Esse é meu cantinho pessoal pra falar dos animes que mais amo:  
+        a franquia completa de Naruto, Black Clover e Tokidoki Bosotto (Alya).  
+        Sem spoilers pesados, só paixão e recomendações honestas.
+      </p>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Meu Blog de Animes • Feito com ❤️ e muito café</p>
+  </footer>
+
+  <script>
+    // Filtros
+    const botoesFiltro = document.querySelectorAll('.filtro-btn');
+    const posts = document.querySelectorAll('.post');
+
+    botoesFiltro.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove ativo de todos
+        botoesFiltro.forEach(b => b.classList.remove('ativo'));
+        btn.classList.add('ativo');
+
+        const filtro = btn.dataset.filtro;
+
+        posts.forEach(post => {
+          if (filtro === 'todos' || post.dataset.anime === filtro) {
+            post.style.display = 'block';
+          } else {
+            post.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Botões de curtir
+    document.querySelectorAll('.like-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('curtido');
+        if (btn.classList.contains('curtido')) {
+          btn.textContent = '❤️ Curtido!';
+        } else {
+          btn.textContent = '❤️ Curtir';
+        }
+      });
+    });
+
+    // Smooth scroll para os links do menu
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const id = link.getAttribute('href');
+        const secao = document.querySelector(id);
+        if (secao) {
+          secao.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Atualiza ativo
+        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
