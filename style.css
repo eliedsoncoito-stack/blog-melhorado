@@ -1,240 +1,33 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: 'Segoe UI', system-ui, sans-serif;
-  background: #0f0f13;
-  color: #e8e8e8;
-  line-height: 1.6;
+    font-family: Arial;
+    margin: 0;
 }
 
-/* Header */
 header {
-  background: linear-gradient(135deg, #1a1a24, #12121a);
-  padding: 25px 20px;
-  text-align: center;
-  border-bottom: 3px solid #ff6b35;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+    background: #204d73;
+    color: white;
+    text-align: center;
+    padding: 25px;
 }
 
-header h1 {
-  font-size: 2rem;
-  color: #ff6b35;
-  letter-spacing: 1px;
+main {
+    margin: 20px;
 }
 
-header p {
-  color: #aaa;
-  font-size: 0.95rem;
-  margin-top: 4px;
+img {
+    width: 70px;
 }
 
-/* Nav */
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 15px;
-  flex-wrap: wrap;
+h2 {
+    margin-top: 20px;
 }
 
-nav a {
-  color: #ccc;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: color 0.25s;
+p {
+    font-size: 14px;
+    line-height: 1.5;
 }
 
-nav a:hover,
-nav a.active {
-  color: #ff6b35;
-}
-
-/* Container */
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 30px 20px;
-}
-
-/* Hero */
-.hero {
-  text-align: center;
-  padding: 40px 20px;
-  margin-bottom: 40px;
-  background: linear-gradient(145deg, #1c1c28, #15151f);
-  border-radius: 16px;
-  border: 1px solid #2a2a3a;
-}
-
-.hero h2 {
-  font-size: 1.8rem;
-  color: #fff;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  color: #bbb;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-/* Filtros */
-.filtros {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 35px;
-  flex-wrap: wrap;
-}
-
-.filtro-btn {
-  background: #1e1e2a;
-  border: 1px solid #333;
-  color: #ccc;
-  padding: 8px 18px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: all 0.25s;
-}
-
-.filtro-btn:hover,
-.filtro-btn.ativo {
-  background: #ff6b35;
-  color: #fff;
-  border-color: #ff6b35;
-}
-
-/* Posts */
-.posts {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-
-.post {
-  background: #16161f;
-  border-radius: 14px;
-  padding: 28px;
-  border-left: 5px solid #ff6b35;
-  transition: transform 0.25s, box-shadow 0.25s;
-}
-
-.post:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
-
-.post.naruto { border-left-color: #ff6b35; }
-.post.blackclover { border-left-color: #4caf50; }
-.post.alya { border-left-color: #64b5f6; }
-
-.post .tag {
-  display: inline-block;
-  font-size: 0.75rem;
-  padding: 3px 10px;
-  border-radius: 12px;
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-.post.naruto .tag { background: rgba(255,107,53,0.2); color: #ff6b35; }
-.post.blackclover .tag { background: rgba(76,175,80,0.2); color: #4caf50; }
-.post.alya .tag { background: rgba(100,181,246,0.2); color: #64b5f6; }
-
-.post h3 {
-  font-size: 1.35rem;
-  margin-bottom: 8px;
-  color: #fff;
-}
-
-.post .meta {
-  font-size: 0.85rem;
-  color: #888;
-  margin-bottom: 14px;
-}
-
-.post p {
-  color: #ccc;
-  margin-bottom: 12px;
-}
-
-.post .acoes {
-  display: flex;
-  gap: 15px;
-  margin-top: 15px;
-}
-
-.like-btn {
-  background: transparent;
-  border: 1px solid #444;
-  color: #aaa;
-  padding: 6px 14px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 0.85rem;
-  transition: all 0.2s;
-}
-
-.like-btn:hover,
-.like-btn.curtido {
-  background: #ff6b35;
-  border-color: #ff6b35;
-  color: #fff;
-}
-
-/* História especial */
-.historia {
-  background: linear-gradient(145deg, #1a1a28, #12121c);
-  border-radius: 14px;
-  padding: 32px;
-  margin: 50px 0;
-  border: 1px solid #2a2a3a;
-}
-
-.historia h2 {
-  color: #ff6b35;
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-}
-
-.historia p {
-  color: #ccc;
-  margin-bottom: 12px;
-}
-
-/* Sobre */
-.sobre {
-  text-align: center;
-  padding: 40px 20px;
-  color: #aaa;
-}
-
-.sobre h2 {
-  color: #fff;
-  margin-bottom: 10px;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 25px;
-  background: #0a0a0e;
-  color: #666;
-  font-size: 0.9rem;
-  border-top: 1px solid #222;
-}
-
-/* Responsivo */
-@media (max-width: 600px) {
-  header h1 { font-size: 1.6rem; }
-  .hero h2 { font-size: 1.4rem; }
-  .post { padding: 20px; }
+button {
+    padding: 8px 15px;
+    cursor: pointer;
 }
