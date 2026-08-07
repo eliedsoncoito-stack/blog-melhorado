@@ -1,139 +1,41 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Blog de Animes</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Meu blog tech</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>🔥 Meu Blog de Animes</h1>
-    <p>Naruto • Black Clover • Alya (Tokidoki Bosotto)</p>
-    <nav>
-      <a href="#inicio" class="active">Início</a>
-      <a href="#posts">Posts</a>
-      <a href="#historia">História</a>
-      <a href="#sobre">Sobre</a>
-    </nav>
-  </header>
+<header>
+    <h1>Meu blog tech</h1>
+    <p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
+</header>
 
-  <div class="container">
+<main>
+    <img src="1786139733139.png" alt="Imagem de tecnologia">
 
-    <section class="hero" id="inicio">
-      <h2>Bem-vindo ao meu cantinho de animes</h2>
-      <p>Aqui eu falo com paixão sobre as franquias que mais me marcaram. Sem enrolação, só amor por essas histórias.</p>
-    </section>
+    <h2>Meu primeiro post</h2>
+    <p>Por: eliedsonzk</p>
 
-    <div class="filtros">
-      <button class="filtro-btn ativo" data-filtro="todos">Todos</button>
-      <button class="filtro-btn" data-filtro="naruto">Naruto</button>
-      <button class="filtro-btn" data-filtro="blackclover">Black Clover</button>
-      <button class="filtro-btn" data-filtro="alya">Alya</button>
-    </div>
+    <p>
+        Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas
+        de programação e curiosidades da área de tecnologia.
+    </p>
 
-    <section class="posts" id="posts">
+    <button onclick="curtir(this)">Curtir</button>
 
-      <article class="post naruto" data-anime="naruto">
-        <span class="tag">Naruto</span>
-        <h3>A Franquia Completa de Naruto</h3>
-        <div class="meta">Publicado em 04/08/2026</div>
-        <p>
-          Naruto não é só um anime. É uma jornada inteira: o menino rejeitado, o ninja que nunca desistiu, o Hokage, Boruto... 
-          Toda a franquia (clássico, Shippuden, filmes e Boruto) tem um lugar especial no coração. 
-          A mensagem de nunca desistir e superar o ódio continua forte até hoje.
-        </p>
-        <p>
-          Meu momento favorito? A luta final do Naruto e Sasuke no Vale do Fim. Goosebumps toda vez.
-        </p>
-        <div class="acoes">
-          <button class="like-btn">❤️ Curtir</button>
-        </div>
-      </article>
+    <h2>Programação e tecnologia</h2>
+    <p>Por: eliedsonzk</p>
 
-      <article class="post blackclover" data-anime="blackclover">
-        <span class="tag">Black Clover</span>
-        <h3>Black Clover – O Rei dos Underdogs</h3>
-        <div class="meta">Publicado em 03/08/2026</div>
-        <p>
-          Asta não tem magia. Zero. E mesmo assim decide virar o Rei Mago. 
-          Black Clover é sobre esforço puro, amizade e nunca baixar a cabeça. 
-          A animação melhorou demais com o tempo e o mangá é ainda melhor.
-        </p>
-        <p>
-          Se você gosta de personagens que gritam “eu vou superar!” do começo ao fim, esse é o seu anime.
-        </p>
-        <div class="acoes">
-          <button class="like-btn">❤️ Curtir</button>
-        </div>
-      </article>
+    <p>
+        A programação está cada vez mais presente em nossas vidas.
+        Aprender tecnologia pode abrir muitas possibilidades.
+    </p>
 
-      <article class="post alya" data-anime="alya">
-        <span class="tag">Tokidoki Bosotto</span>
-        <h3>Alya Sometimes Hides Her Feelings in Russian</h3>
-        <div class="meta">Publicado em 02/08/2026</div>
-        <p>
-          Alya é a garota perfeita da escola… só que ela fica murmurando em russo coisas fofas sem saber que o cara do lado entende tudo. 
-          É romance escolar leve, engraçado e com uma química deliciosa entre Alya e Masachika.
-        </p>
-        <p>
-          A dublagem da Alya falando russo é um charme à parte. Recomendo demais pra quem curte slice of life romântico.
-        </p>
-        <div class="acoes">
-          <button class="like-btn">❤️ Curtir</button>
-        </div>
-      </article>
+    <button onclick="curtir(this)">Curtir</button>
+</main>
 
-      <article class="post naruto" data-anime="naruto">
-        <span class="tag">Naruto</span>
-        <h3>Por que Naruto Shippuden ainda é imbatível</h3>
-        <div class="meta">Publicado em 01/08/2026</div>
-        <p>
-          A segunda parte da história eleva tudo: as mortes, as revelações, o Pain, a Guerra Ninja... 
-          É emocionalmente pesado e visualmente épico. Mesmo com fillers, o arco principal é obra-prima.
-        </p>
-        <div class="acoes">
-          <button class="like-btn">❤️ Curtir</button>
-        </div>
-      </article>
-
-    </section>
-
-    <section class="historia" id="historia">
-      <h2>📖 História Especial: O dia em que eu descobri esses animes</h2>
-      <p>
-        Tudo começou com Naruto. Eu tinha uns 12 anos e vi o menino de macacão laranja falando de sonhos. 
-        Naquela época eu não entendia quase nada de ninja, mas senti que aquele anime falava direto comigo.
-      </p>
-      <p>
-        Anos depois veio Black Clover. Eu estava meio desanimado com a vida e Asta gritando “eu vou me tornar o Rei Mago!” 
-        me deu um soco de motivação. Foi tipo um reset mental.
-      </p>
-      <p>
-        E recentemente chegou a Alya. Eu só queria um romance leve… e acabei rindo sozinho várias vezes com as falas em russo. 
-        É engraçado como três animes tão diferentes conseguiram marcar fases diferentes da minha vida.
-      </p>
-      <p>
-        Por isso esse blog existe: pra eu poder falar desses personagens como se fossem amigos de verdade.
-      </p>
-    </section>
-
-    <section class="sobre" id="sobre">
-      <h2>Sobre o Blog</h2>
-      <p>
-        Esse é meu cantinho pessoal pra falar dos animes que mais amo:  
-        a franquia completa de Naruto, Black Clover e Tokidoki Bosotto (Alya).  
-        Sem spoilers pesados, só paixão e recomendações honestas.
-      </p>
-    </section>
-
-  </div>
-
-  <footer>
-    <p>© 2026 Meu Blog de Animes • Feito com ❤️ e muito café</p>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
